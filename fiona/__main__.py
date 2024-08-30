@@ -12,9 +12,9 @@ client = disnake.Client(intents=intents)
 
 @client.event
 async def on_message(message: Message):
-    if message.author.id == Fiona.ID:
+    if message.author.id == int(Fiona.ID):
         pass
-    if all([char in message.content.lower() for char in list("aadil")]):
-        await message.reply("There's aadil in there.")
+    if all([char in message.content.lower() for char in list(Fiona.SECRET)]):
+        await message.reply("The secret is hidden in your message!")
 
 client.run(Fiona.TOKEN)
